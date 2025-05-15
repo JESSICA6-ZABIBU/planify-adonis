@@ -7,19 +7,47 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-pink">
-    <div>
-        <h1>sign up</h1>
-
-        <form id="sign up" action="" method="">
-         {{csrfField() }}
-
-         <input type="text" name="fullName" placeholder="fullmane">
-         <input type="email" name="email"  placeholder="email">
-         <input type="password" name="password"  placeholder="password">
-         <button type="submit">submit</button>
+<body class="bg-pink-200 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+      <h1 class="text-3xl font-bold text-center text-pink-600 mb-6">Sign Up</h1>
+  
+      <form id="sign-up" action="/login" method="POST" class="space-y-4">
+        {{ csrfField() }}
+  
+        <input 
+          type="text" 
+          name="fullName" 
+          placeholder="Full name"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+  
+        <input 
+          type="email" 
+          name="email"  
+          placeholder="Email"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+  
+        <input 
+          type="password" 
+          name="password"  
+          placeholder="Password"
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400"
+        >
+  
+        <button 
+          type="submit"
+          class="w-full bg-pink-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-pink-600 transition"
+        >
+          Submit
+        </button>
       </form>
-
+      
+      <p class="text-center text-sm text-gray-600 mt-4">
+        Already have an account? 
+        <a href="/login" class="text-pink-600 hover:underline font-medium">Sign in</a>
+      </p>
     </div>
-</body>
+  </body>
+  
 </html>
